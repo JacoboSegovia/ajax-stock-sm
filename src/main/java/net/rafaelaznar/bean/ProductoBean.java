@@ -11,7 +11,6 @@ public class ProductoBean {
     private String descripcion = "";
     private Double precio = 0.0;
     private TipoproductoBean tipoproducto = null;
-    private Integer id_tipoproducto = 0;
 
     public ProductoBean() {
         this.tipoproducto = new TipoproductoBean();
@@ -60,10 +59,5 @@ public class ProductoBean {
 
     public void setTipoProducto(TipoproductoBean tipoProducto) {
         this.tipoproducto = tipoProducto;
-        this.id_tipoproducto = tipoProducto.getId();
-    }
-    
-    public Integer getIdTipoproducto(){
-        return id_tipoproducto;
     }
 }
