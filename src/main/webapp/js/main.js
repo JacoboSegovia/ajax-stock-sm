@@ -151,7 +151,13 @@ var vista = function(objeto, ContextPath) {
                 tabla += '<tr>';
 
                 $.each(objeto.getFieldNames(), function(index, valor) {
-                    tabla += '<td>' + value[valor] + '</td>';
+                    if (/id_/.test(valor)) {
+                        //añadido para claves ajenas
+                        var relacion = valor.split("_")[1];
+                        tabla += '<td>' + value[relacion].descripcion + '</td>';
+                    } else {
+                        tabla += '<td>' + value[valor] + '</td>';
+                    }
                 });
                 tabla += '<td><div class="btn-toolbar"><div class="btn-group">';
 
